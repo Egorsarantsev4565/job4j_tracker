@@ -9,16 +9,13 @@ public class Machine {
         int[] rsl = new int[100];
         int size = 0;
        int remains = money - price;
-       while( remains > 0) {
            for (int i = 0; i <= COINS.length; i++) {
-               if (remains >= COINS[i]) {
-                   remains = remains - COINS[i];
-                   rsl[size] = COINS[i];
-                   size++;
-                   break;
+              while(remains > 0 &&  remains >= COINS[i]) {
+                  remains = remains - COINS[i];
+                  rsl[size] = COINS[i];
+                  size++;
                }
            }
-       }
         return Arrays.copyOf(rsl, size);
     }
 }
