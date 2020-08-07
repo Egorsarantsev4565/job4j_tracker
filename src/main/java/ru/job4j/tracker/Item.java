@@ -7,9 +7,13 @@ public class Item {
     public Item() {
     }
     public Item(int id) {
+ id = 5;
     }
 
-    public Item(int id,String name) {
+    public Item(int id, String name) {
+        name = "Egor";
+        id = 5;
+
     }
 
     public int getId() {
