@@ -7,12 +7,12 @@ public class Item {
     public Item() {
     }
     public Item(int id) {
- id = 5;
+ this.id = id;
     }
 
     public Item(int id, String name) {
-        name = "Egor";
-        id = 5;
+        this.name = name;
+        this.id = id;
 
     }
 
