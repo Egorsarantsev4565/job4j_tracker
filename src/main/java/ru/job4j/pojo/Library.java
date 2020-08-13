@@ -26,13 +26,13 @@ public class Library {
             Book pr = prods[index];
             System.out.println(pr.getName() + " - " + pr.getPages());
         }
-            System.out.println(" Find Book - Clean Code");
-            for (int i = 0; i < prods.length; i++) {
+        System.out.println(" Find Book - Clean Code");
+            for(int i = 0; i < prods.length; i++) {
                 Book call = prods[i];
-                if (call.getName() == "Clean Code") {
+                if(call.getName().equals("Clean Code")) {
                     System.out.println(call.getName() + " - " + call.getPages());
                 }
             }
-        }
 
+    }
 }
