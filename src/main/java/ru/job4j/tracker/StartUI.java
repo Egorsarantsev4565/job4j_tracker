@@ -7,7 +7,7 @@ public class StartUI {
 
         Tracker tracker = new Tracker();
     tracker.add(item);
-    tracker.findById(item.getId());
+        tracker.findById(item.getId());
     System.out.println(item);
 
     }
