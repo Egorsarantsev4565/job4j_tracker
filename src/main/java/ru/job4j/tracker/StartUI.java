@@ -73,11 +73,11 @@ public class StartUI {
                     for (Item item : items) {
                         System.out.println(" Id: " + item.getId() + " Name: " + item.getName());
                     }} else {
-                        System.out.println(" Not found ");
-                    }
-                } else if (select == 6) {
-                    run = false;
+                    System.out.println(" Not found ");
                 }
+            } else if (select == 6) {
+                run = false;
             }
         }
     }
+}
