@@ -11,18 +11,14 @@ public class Matches {
             String playerName = player ? "player_1" : "player_2";
             System.out.println(playerName + " берет спички : 1 - 2 - 3");
             int select = Integer.valueOf(input.nextLine());
-            if (select == 1 || select == 2 || select == 3) {
+            if (select > 0 && select < 4) {
                 matches = matches - select;
-                if (matches <= 0) {
-                    System.out.println(" Спички закончились. Победитель : " + playerName );
-
-
                 } System.out.println(" Осталось спичек - " + matches);
                 player = !player;
+                if (matches <= 0) {
+                System.out.println(" Спички закончились. Победитель : " + playerName );
             }
-
             }
-
     }
 }
 
