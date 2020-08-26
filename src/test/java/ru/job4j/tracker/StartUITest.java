@@ -124,7 +124,7 @@ assertThat(output.toString(), is(
 @Test
     public void whenFindActionByName() {
     Output output = new StubOutput();
-    String nameItem = new String();
+    String nameItem = "nameItem";
     Input in = new StubInput(
             new String[] {"0",nameItem,"1"} );
     Tracker tracker = new Tracker();
