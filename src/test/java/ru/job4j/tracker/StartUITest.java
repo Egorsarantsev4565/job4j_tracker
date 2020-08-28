@@ -36,7 +36,7 @@ public class StartUITest {
                 new ExitAction(output)
         };
         new StartUI(output).init(in, tracker, actions);
-        assertThat(tracker.findById(item.getId()), is(replacedName));
+        assertThat(tracker.findById(item.getId()).getName(), is(replacedName));
     }
 
     @Test
@@ -93,7 +93,7 @@ assertThat(output.toString(), is(
 
                 "Menu." + System.lineSeparator() +
                 "0. === All Items ===" + System.lineSeparator() +
-                "1. Exit" + System.lineSeparator() + "=== Exit programm ====" + System.lineSeparator()
+                "1. Exit" + System.lineSeparator()
 ));
     }
 
@@ -117,7 +117,7 @@ assertThat(output.toString(), is(
 
                         "Menu." +  System.lineSeparator() +
                         "0. === Find item by id ===" + System.lineSeparator() +
-                        "1. Exit" + System.lineSeparator() + "=== Exit programm ====" + System.lineSeparator()
+                        "1. Exit" + System.lineSeparator()
         ));
 
     }
@@ -142,9 +142,29 @@ assertThat(output.toString(), is(
 
                     "Menu." +  System.lineSeparator() +
                     "0. === Find items by name ===" + System.lineSeparator() +
-                    "1. Exit" + System.lineSeparator() + "=== Exit programm ====" + System.lineSeparator()
+                    "1. Exit" + System.lineSeparator()
     ));
 }
 
-
+    @Test
+    public void whenInvalidExit() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[] {"1", "0"}
+        );
+        Tracker tracker = new Tracker();
+        UserAction[] actions = {
+                new ExitAction(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        assertThat(out.toString(), is(
+                String.format(
+                        "Menu.%n"
+                                + "0. Exit%n"
+                                + "Wrong input, you can select: 0 .. 0%n"
+                                + "Menu.%n"
+                                + "0. Exit%n"
+                )
+        ));
+    }
 }
