@@ -1,4 +1,5 @@
 package ru.job4j.tracker;
+import java.time.format.DateTimeFormatter;
 public class StartUI {
     private final Output out;
 
@@ -7,6 +8,9 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Item item = new Item();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
+        System.out.println(item.getCreated().format(formatter));
         Output output = new ConsoleOutput();
         Input input = new ValidateInput(output, new ConsoleInput());
         Tracker tracker = new Tracker();
@@ -39,4 +43,5 @@ public class StartUI {
             run = action.execute(input, tracker);
         }
     }
+
 }
