@@ -35,6 +35,7 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenByPriorityUp() {
         Comparator<Job> cmpName = new CompareByPriorityUp();
@@ -44,6 +45,7 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenByPriorityDown() {
         Comparator<Job> cmpName = new CompareByPriorityDown();
@@ -53,12 +55,49 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByNameAndPrority2() {
         Comparator<Job> cmpNamePriority = new CompareByNameUp().thenComparing(new CompareByPriorityDown());
         int rsl = cmpNamePriority.compare(
                 new Job("A", 2),
                 new Job("B", 1)
+        );
+        assertThat(rsl, lessThan(0));
+    }
+@Test
+    public void whenCompatorByNameAndPrority3() {
+        Comparator<Job> cmpNamePriority = new CompareByNameUp().thenComparing(new CompareByPriorityDown());
+        int rsl = cmpNamePriority.compare(
+                new Job("A", 2),
+                new Job("A", 1)
+        );
+        assertThat(rsl, lessThan(0));
+    }
+    @Test
+    public void whenCompatorByNameAndPrority4() {
+        Comparator<Job> cmpNamePriority = new CompareByNameDown().thenComparing(new CompareByPriorityUp());
+        int rsl = cmpNamePriority.compare(
+                new Job("B", 1),
+                new Job("B", 2)
+        );
+        assertThat(rsl, lessThan(0));
+    }
+    @Test
+    public void whenCompatorByNameAndPrority5() {
+        Comparator<Job> cmpNamePriority = new CompareByPriorityDown().thenComparing(new CompareByNameUp());
+        int rsl = cmpNamePriority.compare(
+                new Job("A", 1),
+                new Job("B", 1)
+        );
+        assertThat(rsl, lessThan(0));
+    }
+    @Test
+    public void whenCompatorByNameAndPrority6() {
+        Comparator<Job> cmpNamePriority = new CompareByPriorityUp().thenComparing(new CompareByNameDown());
+        int rsl = cmpNamePriority.compare(
+                new Job("B", 3),
+                new Job("A", 3)
         );
         assertThat(rsl, lessThan(0));
     }
