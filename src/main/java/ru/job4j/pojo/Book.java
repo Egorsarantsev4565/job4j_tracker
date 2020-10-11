@@ -17,7 +17,6 @@ public class Book {
         this.name = name;
     }
 
-
     public int getPages() {
         return pages;
     }

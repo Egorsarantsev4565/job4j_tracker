@@ -14,13 +14,11 @@ public class Profession {
         return surname;
     }
 
-
     public String getEducation() {
         return education;
     }
 
-
-public String getBirthday() {
+    public String getBirthday() {
         return birthday;
-        }
+    }
 }

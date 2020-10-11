@@ -13,10 +13,12 @@ public class Matches {
             int select = Integer.valueOf(input.nextLine());
             if (select > 0 && select < 4) {
                 matches = matches - select;
-                } System.out.println(" Осталось спичек - " + matches);
+                }
+            System.out.println(" Осталось спичек - " + matches);
                 player = !player;
+
                 if (matches <= 0) {
-                System.out.println(" Спички закончились. Победитель : " + playerName );
+                System.out.println(" Спички закончились. Победитель : " + playerName);
             }
             }
     }

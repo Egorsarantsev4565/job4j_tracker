@@ -20,9 +20,9 @@ public class ValidateInputTest {
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
                 String.format(
-                        "Menu.%n" +
-                                "0. Exit%n" +
-                                "Please enter validate data again.%n"
+                        "Menu.%n"
+                                +    "0. Exit%n"
+                                +  "Please enter validate data again.%n"
                 )
                 )
         );

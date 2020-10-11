@@ -8,7 +8,8 @@ import static org.junit.Assert.assertThat;
 public class JobTest {
     @Test
     public void whenCompatorByNameAndPrority1() {
-        Comparator<Job> cmpNamePriority = new CompareByNameDown().thenComparing(new CompareByPriorityUp());
+        Comparator<Job> cmpNamePriority = new CompareByNameDown().thenComparing(
+                new CompareByPriorityUp());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 0),
                 new Job("A", 1)
@@ -58,43 +59,52 @@ public class JobTest {
 
     @Test
     public void whenCompatorByNameAndPrority2() {
-        Comparator<Job> cmpNamePriority = new CompareByNameUp().thenComparing(new CompareByPriorityDown());
+        Comparator<Job> cmpNamePriority = new CompareByNameUp().thenComparing(
+                new CompareByPriorityDown());
         int rsl = cmpNamePriority.compare(
                 new Job("A", 2),
                 new Job("B", 1)
         );
         assertThat(rsl, lessThan(0));
     }
-@Test
+
+    @Test
     public void whenCompatorByNameAndPrority3() {
-        Comparator<Job> cmpNamePriority = new CompareByNameUp().thenComparing(new CompareByPriorityDown());
+        Comparator<Job> cmpNamePriority = new CompareByNameUp().thenComparing(
+                new CompareByPriorityDown());
         int rsl = cmpNamePriority.compare(
                 new Job("A", 2),
                 new Job("A", 1)
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByNameAndPrority4() {
-        Comparator<Job> cmpNamePriority = new CompareByNameDown().thenComparing(new CompareByPriorityUp());
+        Comparator<Job> cmpNamePriority = new CompareByNameDown().thenComparing(
+                new CompareByPriorityUp());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 1),
                 new Job("B", 2)
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByNameAndPrority5() {
-        Comparator<Job> cmpNamePriority = new CompareByPriorityDown().thenComparing(new CompareByNameUp());
+        Comparator<Job> cmpNamePriority = new CompareByPriorityDown().thenComparing(
+                new CompareByNameUp());
         int rsl = cmpNamePriority.compare(
                 new Job("A", 1),
                 new Job("B", 1)
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByNameAndPrority6() {
-        Comparator<Job> cmpNamePriority = new CompareByPriorityUp().thenComparing(new CompareByNameDown());
+        Comparator<Job> cmpNamePriority = new CompareByPriorityUp().thenComparing(
+                new CompareByNameDown());
         int rsl = cmpNamePriority.compare(
                 new Job("B", 3),
                 new Job("A", 3)

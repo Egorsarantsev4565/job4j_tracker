@@ -3,9 +3,6 @@ package ru.job4j.poly;
 public class Bus implements Transport {
     private int passenger;
 
-
-
-
     @Override
     public void drive() {
         System.out.println("The transport is in motion");

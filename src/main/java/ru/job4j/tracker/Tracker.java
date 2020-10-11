@@ -11,7 +11,6 @@ public class Tracker {
         return item;
     }
 
-
     public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
@@ -44,7 +43,6 @@ public class Tracker {
         return rsl;
     }
 
-
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
         boolean rsl = index != -1;
@@ -54,7 +52,6 @@ public class Tracker {
         }
         return rsl;
     }
-
 
     public boolean delete(int id) {
         int index = indexOf(id);

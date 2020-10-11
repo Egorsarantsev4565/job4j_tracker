@@ -6,6 +6,8 @@ public class College {
         student.setFIO("Sarantsev Egor");
         student.setGroup("Inter");
         student.setDate("24 june 2020");
-        System.out.println(student.getFIO() + " - " + student.getGroup() + " group - " + student.getDate());
+        System.out.println(student.getFIO()
+               + " - " + student.getGroup() + " group - " + student.getDate());
+
     }
 }

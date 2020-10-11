@@ -6,10 +6,12 @@ public class DeleteAction implements UserAction {
     public DeleteAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "=== Delete item ===";
     }
+
         @Override
         public boolean execute(Input input, Tracker tracker) {
             int id = Integer.parseInt(input.askStr(" Enter id item: "));

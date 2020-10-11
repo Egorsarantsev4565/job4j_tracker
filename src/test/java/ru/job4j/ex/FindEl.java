@@ -15,11 +15,10 @@ if (rsl == -1) {
 return rsl;
         }
 
-
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         try {
             String[] value = {"a1", "a2", "a3"};
-            System.out.println(indexOf(value,"a2"));
+            System.out.println(indexOf(value, "a2"));
         } catch (ElementNotFoundException e) {
             e.printStackTrace();
         }

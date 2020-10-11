@@ -25,6 +25,7 @@ public class NotifyAccountTest {
         );
         assertThat(NotifyAccount.sent(accounts), is(expect));
     }
+
     @Test
     public void sentDelete() {
         List<Account> accounts = Arrays.asList(

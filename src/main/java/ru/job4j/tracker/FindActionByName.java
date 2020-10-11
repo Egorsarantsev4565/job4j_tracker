@@ -6,6 +6,7 @@ public class FindActionByName implements UserAction {
     public FindActionByName(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
 

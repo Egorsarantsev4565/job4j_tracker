@@ -1,34 +1,35 @@
 package ru.job4j.pojo;
 
 public class Student {
-    private String FIO;
-    private String Group;
-    private String Date;
+
+    private String fio;
+
+    private String group;
+
+    private String date;
 
     public String getFIO() {
-        return FIO;
+        return fio;
     }
 
-    public void setFIO(String FIO) {
-        this.FIO = FIO;
+    public void setFIO(String fio) {
+        this.fio = fio;
     }
-
 
     public String getGroup() {
-        return Group;
+        return group;
     }
 
     public void setGroup(String group) {
-        Group = group;
+       this.group = group;
     }
 
-
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+       this.date = date;
     }
 }
 
