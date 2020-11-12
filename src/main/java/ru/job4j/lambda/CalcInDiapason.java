@@ -3,5 +3,13 @@ import java.util.*;
 import java.util.function.*;
 public class CalcInDiapason {
 
+    public static List<Double> diapason(int start, int end, Function<Double, Double> func) {
+List<Double> result = new ArrayList<>();
+for (int i = start; i < end; i++) {
+    result.add(func.apply((double) i));
 
 }
+return result;
+        }
+    }
+
