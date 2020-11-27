@@ -15,6 +15,7 @@ public class ProfilesTest {
     @Before
     public void setUp() {
   profiles.add(new Profile("Nizhniy Novgorod", "Karla Marksa", 2, 48));
+  profiles.add(new Profile("Nizhniy Novgorod", "Karla Marksa", 2, 48));
   profiles.add(new Profile("Kaliningrad", "Lenina", 5, 89));
   profiles.add(new Profile("Nizhniy Novgorod", "Akimova", 37, 73));
   profiles.add(new Profile("Moscow", "Lubyanka", 4, 50));
@@ -23,10 +24,10 @@ public class ProfilesTest {
     public void tourists() {
         List<Address> rsl = new Profiles().collect(profiles);
         List<Address> expected = List.of(
-                new Address("Nizhniy Novgorod", "Karla Marksa", 2, 48),
                 new Address("Kaliningrad", "Lenina", 5, 89),
-                new Address("Nizhniy Novgorod", "Akimova", 37, 73),
-                new Address("Moscow", "Lubyanka", 4, 50)
+                new Address("Moscow", "Lubyanka", 4, 50),
+                new Address("Nizhniy Novgorod", "Karla Marksa", 2, 48),
+                new Address("Nizhniy Novgorod", "Akimova", 37, 73)
 
         );
         assertThat(rsl, is(expected));
