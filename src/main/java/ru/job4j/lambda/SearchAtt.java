@@ -16,7 +16,6 @@ public class SearchAtt {
         return filter(list, func);
     }
 
-
     public static List<Attachment> filterName(List<Attachment> list) {
         Predicate<Attachment> func = new Predicate<>() {
             @Override
@@ -26,6 +25,7 @@ public class SearchAtt {
         };
         return filter(list, func);
     }
+
     private static List<Attachment> filter(List<Attachment> list, Predicate<Attachment> func) {
         List<Attachment> rsl = new ArrayList<>();
         for (Attachment att : list) {

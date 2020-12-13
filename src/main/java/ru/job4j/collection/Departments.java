@@ -10,16 +10,20 @@ public class Departments {
             for (String el : value.split("/")) {
                 if (start.equals("")) {
                     start = start + el;
-                } else { start = start + "/" + el; }
+                } else {
+                    start = start + "/" + el;
+                }
                 tmp.add(start);
 
             }
         }
         return new ArrayList<>(tmp);
     }
+
     public static void sortAsc(List<String> orgs) {
         Collections.sort(orgs);
     }
+
     public static void sortDesc(List<String> orgs) {
         Collections.sort(orgs, new DepDescComp());
     }

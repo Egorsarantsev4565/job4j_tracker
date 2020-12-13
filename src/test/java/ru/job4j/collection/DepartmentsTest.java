@@ -22,6 +22,7 @@ public class DepartmentsTest {
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
+
     @Test
     public void when1() {
         List<String> input = Arrays.asList("k1/sk1/ssk1");
@@ -29,6 +30,7 @@ public class DepartmentsTest {
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
+
     @Test
     public void when2() {
         List<String> input = Arrays.asList("k2/sk1/ssk1");
@@ -36,10 +38,12 @@ public class DepartmentsTest {
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }
+
     @Test
     public void when3() {
         List<String> input = Arrays.asList("k2/sk1/ssk2", "k1/sk2", "k3/sk1/ssk2");
-        List<String> expect = Arrays.asList("k2", "k2/sk1", "k2/sk1/ssk2", "k1", "k1/sk2", "k3", "k3/sk1", "k3/sk1/ssk2");
+        List<String> expect = Arrays.asList("k2", "k2/sk1", "k2/sk1/ssk2",
+                "k1", "k1/sk2", "k3", "k3/sk1", "k3/sk1/ssk2");
         List<String> result = Departments.fillGaps(input);
         assertThat(result, is(expect));
     }

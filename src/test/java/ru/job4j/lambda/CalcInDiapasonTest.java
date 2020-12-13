@@ -18,9 +18,10 @@ public class CalcInDiapasonTest {
         List<Double> expected = Arrays.asList(1D, 4D);
         assertThat(result, is(expected));
     }
+
     @Test
     public void whenExponentialFunction() {
-        List<Double> result = CalcInDiapason.diapason(2, 5, x -> Math.pow(2,x));
+        List<Double> result = CalcInDiapason.diapason(2, 5, x -> Math.pow(2, x));
         List<Double> expected = Arrays.asList(4D, 8D, 16D);
         assertThat(result, is(expected));
     }

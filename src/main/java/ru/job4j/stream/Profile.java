@@ -6,7 +6,8 @@ public class Profile {
    public Profile(String city, String street, int home, int apartment) {
        address = new Address(city, street, home, apartment);
    }
-public Address getAddress() {
+
+    public Address getAddress() {
        return address;
 }
 }

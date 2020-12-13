@@ -12,6 +12,7 @@ import static org.junit.Assert.assertThat;
 
 public class ProfilesTest {
     private List<Profile> profiles = new ArrayList<>();
+
     @Before
     public void setUp() {
   profiles.add(new Profile("Nizhniy Novgorod", "Karla Marksa", 2, 48));
@@ -20,6 +21,7 @@ public class ProfilesTest {
   profiles.add(new Profile("Nizhniy Novgorod", "Akimova", 37, 73));
   profiles.add(new Profile("Moscow", "Lubyanka", 4, 50));
     }
+
     @Test
     public void tourists() {
         List<Address> rsl = new Profiles().collect(profiles);
