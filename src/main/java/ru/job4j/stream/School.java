@@ -10,6 +10,7 @@ public class School {
     public List<Student> collect(List<Student> students, Predicate<Student> predict) {
 return students.stream().filter(predict).collect(Collectors.toList());
     }
+
     public Map<String, Student> convert(List<Student> students) {
         return students.stream()
                 .collect(Collectors
