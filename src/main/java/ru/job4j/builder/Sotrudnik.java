@@ -9,6 +9,18 @@ public class Sotrudnik {
     private String profession;
     private double salary;
 
+    @Override
+    public String toString() {
+        return "Sotrudnik{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", city='" + city + '\'' +
+                ", profession='" + profession + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
 
     static class Builder {
         private String name;
