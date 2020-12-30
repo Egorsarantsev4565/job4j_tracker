@@ -16,15 +16,15 @@ public class SchoolTest {
 
     @Before
     public void setUp() {
-        students.add(new Student(10, "Surname1"));
-        students.add(new Student(20, "Surname2"));
-        students.add(new Student(30, "Surname3"));
-        students.add(new Student(40, "Surname4"));
-        students.add(new Student(50, "Surname5"));
-        students.add(new Student(60, "Surname6"));
-        students.add(new Student(70, "Surname7"));
-        students.add(new Student(80, "Surname8"));
-        students.add(new Student(90, "Surname9"));
+        students.add(new Student("Surname1", 10));
+        students.add(new Student("Surname2", 20));
+        students.add(new Student("Surname3", 30));
+        students.add(new Student("Surname4", 40));
+        students.add(new Student("Surname5", 50));
+        students.add(new Student("Surname6", 60));
+        students.add(new Student("Surname7", 70));
+        students.add(new Student("Surname8", 80));
+        students.add(new Student("Surname9", 90));
     }
 
     @Test
@@ -33,9 +33,9 @@ public class SchoolTest {
         Predicate<Student> pr = student -> student.getScore() >= 70;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
-        expected.add(new Student(70, "Surname7"));
-        expected.add(new Student(80, "Surname8"));
-        expected.add(new Student(90, "Surname9"));
+        expected.add(new Student("Surname7", 70));
+        expected.add(new Student("Surname8", 80));
+        expected.add(new Student("Surname9", 90));
         assertThat(rsl, is(expected));
     }
 
@@ -45,8 +45,8 @@ public class SchoolTest {
         Predicate<Student> pr = student -> student.getScore() >= 50 && student.getScore() < 70;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
-        expected.add(new Student(50, "Surname5"));
-        expected.add(new Student(60, "Surname6"));
+        expected.add(new Student("Surname5", 50));
+        expected.add(new Student("Surname6", 60));
         assertThat(rsl, is(expected));
     }
 
@@ -56,10 +56,10 @@ public class SchoolTest {
         Predicate<Student> pr = student -> student.getScore() < 50;
         List<Student> rsl = sc.collect(students, pr);
         List<Student> expected = new ArrayList<>();
-        expected.add(new Student(10, "Surname1"));
-        expected.add(new Student(20, "Surname2"));
-        expected.add(new Student(30, "Surname3"));
-        expected.add(new Student(40, "Surname4"));
+        expected.add(new Student("Surname1", 10));
+        expected.add(new Student("Surname2", 20));
+        expected.add(new Student("Surname3", 30));
+        expected.add(new Student("Surname4", 40));
         assertThat(rsl, is(expected));
     }
 
@@ -68,15 +68,15 @@ public class SchoolTest {
         School sc = new School();
         Map<String, Student> rsl = sc.convert(students);
         Map<String, Student> expected = new HashMap<>();
-        expected.put("Surname1", new Student(10, "Surname1"));
-        expected.put("Surname2", new Student(20, "Surname2"));
-        expected.put("Surname3", new Student(30, "Surname3"));
-        expected.put("Surname4", new Student(40, "Surname4"));
-        expected.put("Surname5", new Student(50, "Surname5"));
-        expected.put("Surname6", new Student(60, "Surname6"));
-        expected.put("Surname7", new Student(70, "Surname7"));
-        expected.put("Surname8", new Student(80, "Surname8"));
-        expected.put("Surname9", new Student(90, "Surname9"));
+        expected.put("Surname1", new Student("Surname1", 10));
+        expected.put("Surname2", new Student("Surname2", 20));
+        expected.put("Surname3", new Student("Surname3", 30));
+        expected.put("Surname4", new Student("Surname4", 40));
+        expected.put("Surname5", new Student("Surname5", 50));
+        expected.put("Surname6", new Student("Surname6", 60));
+        expected.put("Surname7", new Student("Surname7", 70));
+        expected.put("Surname8", new Student("Surname8", 80));
+        expected.put("Surname9", new Student("Surname9", 90));
         assertThat(rsl, is(expected));
     }
 }
