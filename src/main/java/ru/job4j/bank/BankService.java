@@ -23,10 +23,10 @@ public class BankService {
     }
 
     public Optional<User> findByPassport(String passport) {
-        Optional<User> rsl = users.keySet().stream()
+
+        return  users.keySet().stream()
                 .filter(user -> user.getPassport().equals(passport))
                 .findAny();
-        return rsl;
     }
 
     public Optional<Account> findByRequisite(String passport, String requisite) {
