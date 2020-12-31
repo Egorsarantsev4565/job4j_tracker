@@ -12,10 +12,12 @@ public class User {
     }
 
     public String getPassport() {
+
         return passport;
     }
 
     public void setPassport(String passport) {
+
         this.passport = passport;
     }
 
