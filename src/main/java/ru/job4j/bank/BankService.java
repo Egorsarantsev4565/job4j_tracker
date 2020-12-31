@@ -1,7 +1,7 @@
 package ru.job4j.bank;
 
 import java.util.*;
-//
+
 public class BankService {
 
     private Map<User, List<Account>> users = new HashMap<>();
@@ -23,13 +23,9 @@ public class BankService {
     }
 
     public Optional<User> findByPassport(String passport) {
-        Optional<User> rsl = Optional.empty();
-        for (User user : users.keySet()) {
-            if (user.getPassport().equals(passport)) {
-                rsl = Optional.of(user);
-                break;
-            }
-        }
+        Optional<User> rsl = users.keySet().stream()
+                .filter(user -> user.getPassport().equals(passport))
+                .findAny();
         return rsl;
     }
 
