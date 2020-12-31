@@ -13,7 +13,7 @@ public class BankServiceTest {
         bank.addUser(user);
         assertThat(bank.findByPassport("3434").get(), is(user));
     }
-
+//
     @Test
     public void whenEnterInvalidPassport() {
         User user = new User("3434", "Petr Arsentev");
